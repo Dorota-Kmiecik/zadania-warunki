@@ -47,7 +47,7 @@ namespace Tydzien2_Warunki
 
             //Zadanie 4
             int year = 2016;
-            if (year % 4 == 0)
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
             {
                 Console.WriteLine($"{year} jest rokiem przestepnym");
             }
@@ -58,13 +58,21 @@ namespace Tydzien2_Warunki
 
             //Zadanie 5
             int age = 21;
-            if (age >= 21)
+            if (age >= 35)
+            {
+                Console.WriteLine("Mozesz zostac prezydentem");
+            }
+            else if (age >= 30)
+            {
+                Console.WriteLine("Mozesz zostac senatorem");
+            }
+            else if (age >= 21)
             {
                 Console.WriteLine("Mozesz zostac poslem");
             }
             else
             {
-                Console.WriteLine("Nie mozesz zostac poslem");
+                Console.WriteLine("Jestes za mlody");
             }
 
             //Zadanie 6
@@ -73,7 +81,7 @@ namespace Tydzien2_Warunki
             {
                 Console.WriteLine("Jestes wysoki");
             }
-            else if (height <= 160 && height > 140)
+            else if (height < 170 && height > 140)
             {
                 Console.WriteLine("Nie jestes az taki maly");
             }
@@ -85,29 +93,16 @@ namespace Tydzien2_Warunki
             //Zadanie 7
             int number5 = 25;
             int number6 = 63;
-            int number7 = 79;
-
-            if (number5 > number6 && number5 > number7)
-            {
-                Console.WriteLine($"{number5} jest najwieksza z podanych");
-            }
-            else if (number6 > number5 && number6 > number7)
-            {
-                Console.WriteLine($"{number6} jest najwieksza z podanych");
-
-            }
-            else
-            {
-                Console.WriteLine($"{number7} jest najwieksza z podanych");
-
-            }
+            int number7 = 79;            
+            int max = Math.Max( number5, Math.Max(number6, number7) );
+            Console.WriteLine($"{max} jest najwiekszy");
 
             //Zadanie 8
             int math = 80;
             int physics = 71;
             int chemistry = 0;
 
-            if ((math > 70 && physics > 55 && chemistry > 45) || (math + physics + chemistry > 180) || (math + physics > 150) || (math + chemistry > 150))
+            if ((math > 70 && physics > 55 && chemistry > 45) && math + physics + chemistry > 180 || (math + physics > 150) || (math + chemistry > 150))
             {
                 Console.WriteLine("Kandydat dopuszczony do rekrutacji");
             }
@@ -149,7 +144,7 @@ namespace Tydzien2_Warunki
             int b = 55;
             int c = 65;
 
-            if (a + b > c || a + c > b || b + c > a)
+            if (a>c && a>b && b + c >a  || b>a && b>c && a + c > b || c>b && c>a && b + a > c)
             {
                 Console.WriteLine("Można zbudować trójkąt");
             }
@@ -180,6 +175,9 @@ namespace Tydzien2_Warunki
                 case 6:
                     Console.WriteLine("Celujący");
                     break;
+                default:
+                    Console.WriteLine("Wybrales nieprawidlowe dane");
+                    break;
             }
 
             //Zadanie 12
@@ -207,6 +205,9 @@ namespace Tydzien2_Warunki
                 case 7:
                     Console.WriteLine("Niedziela");
                 break;
+                default:
+                    Console.WriteLine("Wybrales nieprawidlowe dane");
+                    break;
             }
 
             //Zadanie 13
