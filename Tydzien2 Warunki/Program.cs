@@ -217,7 +217,7 @@ namespace Tydzien2_Warunki
             int nr2 = int.Parse(Console.ReadLine());
             Console.WriteLine("Podaj numer operacji do wykonania: \r\n1. Dodawanie\r\n2. Odejmowanie\r\n3. Mnożenie\r\n4. Dzielenie");
             int operation = int.Parse(Console.ReadLine());
-            int outcome;
+            double outcome;
             switch (operation) 
             {
                 case 1:                   
@@ -233,7 +233,7 @@ namespace Tydzien2_Warunki
                     Console.WriteLine($"Twoj wynik to: {outcome}");
                     break;
                 case 4:
-                    outcome = nr1 / nr2;
+                    outcome = (double)nr1 / nr2;
                     Console.WriteLine($"Twoj wynik to: {outcome}");
                     break;
                 default:
